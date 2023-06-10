@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# create build directory
+mkdir -p build
+cd build
+
+# run CMake to generate the build files
+cmake ..
+
+# build the project
+cmake --build .
+
+# run the executable
+./bin/renderer
+
+# return to original directory
+cd ..
