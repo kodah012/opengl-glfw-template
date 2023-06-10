@@ -19,21 +19,19 @@ set(SOURCES
     src/main.cpp
 )
 
-# create executable target
+# set executable target name
 set(TARGET_NAME ${PROJECT_NAME})
-add_executable(${TARGET_NAME} ${SOURCES})
-
-# include header files in the "include" directory
-target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+add_subdirectory(src)
 
 # find OpenGL, GLEW, and GLFW
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(glfw3 REQUIRED)
 
-# link libraries
+# link libraries for OpenGL, GLEW, and GLFW
 target_link_libraries(${TARGET_NAME} PRIVATE
     OpenGL::GL
     GLEW::GLEW
     glfw
 )
+

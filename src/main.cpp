@@ -1,3 +1,4 @@
+#include "window/lib.hpp"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -15,6 +16,10 @@ void process_input(GLFWwindow *window) {
 }
 
 int main(int argc, char *argv[]) {
+    Window w = Window();
+    w.run();
+    
+    
     // initialize GLFW
     if (!glfwInit()) {
         std::cerr << "failed to initialize GLFW" << std::endl;
